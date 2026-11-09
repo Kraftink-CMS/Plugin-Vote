@@ -5,6 +5,11 @@
     "license": "MIT",
     "description": "vote::messages.package_description",
     "market": {
+        "readme": {
+            "en": "lang/en/market.md",
+            "fr": "lang/fr/market.md"
+        },
+        "icon": "check2-square",
         "name": "vote::market.name",
         "author": {
             "name": "nivcoo, KraftInk",
