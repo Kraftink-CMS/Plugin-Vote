@@ -2,5 +2,5 @@
 
 return [
     'name' => 'Vote',
-    'description' => 'Faites vivre les votes avec des classements, des paliers et des récompenses pour vos joueurs.',
+    'description' => 'Vérifiez les votes de vos joueurs et récompensez-les par vote, par palier ou selon le classement.',
 ];

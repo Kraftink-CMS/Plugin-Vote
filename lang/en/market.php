@@ -2,5 +2,5 @@
 
 return [
     'name' => 'Vote',
-    'description' => 'Bring votes to life with leaderboards, milestones and rewards for your players.',
+    'description' => 'Verify player votes and reward individual votes, milestones or leaderboard positions.',
 ];
