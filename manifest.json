@@ -1,0 +1,104 @@
+{
+    "id": "vote",
+    "name": "Vote",
+    "authors": ["nivcoo","KraftInk"],
+    "license": "MIT",
+    "description": "vote::messages.package_description",
+    "market": {
+        "name": "vote::market.name",
+        "author": {
+            "name": "nivcoo, KraftInk",
+            "url": "https://github.com/kraftink-cms"
+        },
+        "description": "vote::market.description"
+    },
+    "type": "plugin",
+    "games": {
+        "supported": ["*"]
+    },
+    "version": "1.0.0",
+    "namespace": "KraftInk\\Plugins\\Vote\\",
+    "provider": "KraftInk\\Plugins\\Vote\\Providers\\PluginServiceProvider",
+    "permissions": {
+        "vote.view": {
+            "label": "vote::messages.permission_view",
+            "default": {
+                "visitor": true,
+                "member": true
+            }
+        },
+        "vote.manage": {
+            "label": "vote::messages.admin_title",
+            "default": {
+                "admin": true
+            }
+        },
+        "vote.review": {
+            "label": "vote::messages.verification.reviews",
+            "default": {
+                "admin": true
+            }
+        }
+    },
+    "navigation": {
+        "public": [
+            {
+                "label": "vote::messages.site.title",
+                "permission": "vote.view",
+                "route": "plugins.vote.public.votes.index"
+            }
+        ],
+        "admin": [
+            {
+                "parent": "extensions",
+                "position": 200,
+                "label": "vote::messages.site.title",
+                "id": "vote",
+                "icon": "hand-thumbs-up",
+                "children": [
+                    {
+                        "label": "vote::messages.verification.sites",
+                        "permission": "vote.manage",
+                        "icon": "globe2",
+                        "route": "plugins.vote.admin.sites.index"
+                    },
+                    {
+                        "label": "vote::rewards.title",
+                        "permission": "vote.manage",
+                        "icon": "gift",
+                        "route": "plugins.vote.admin.rewards.index"
+                    },
+                    {
+                        "label": "vote::messages.verification.reviews",
+                        "permission": "vote.review",
+                        "icon": "shield-check",
+                        "route": "plugins.vote.admin.reviews.index"
+                    }
+                ],
+                "permission": "vote.manage"
+            }
+        ],
+        "footer": []
+    },
+    "imports": {
+        "kraftink": ["vote__"],
+        "azuriom": ["vote_"],
+        "mineweb": ["vote_"]
+    },
+    "requires": {
+        "php": "^8.4.1",
+        "cms": ">=0.0.1"
+    },
+    "configuration": {
+        "route": "plugins.vote.admin.sites.index",
+        "permission": "vote.manage"
+    },
+    "uninstall": {
+        "settings": ["vote.", "secret.vote."],
+        "storage": []
+    },
+    "privacy": "KraftInk\\Plugins\\Vote\\Services\\Privacy",
+    "assets": {
+        "scripts": ["admin.js"]
+    }
+}
